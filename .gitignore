@@ -4,5 +4,6 @@
 build/
 local.properties
 *.iml
+board.db
 *.jar
 !**/gradle/wrapper/gradle-wrapper.jar
