@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cart_sum_layout"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/cart_sum_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8000ACC1"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/cart_selectall_checkbox"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/cart_selectall_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:text="전부 선택" />
+
+        <TextView
+            android:id="@+id/cart_total_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="합계 : "
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/cart_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/cart_order_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FB8C00"
+            android:drawableLeft="@drawable/icon_order"
+            android:text="주문하기" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

@@ -7,6 +7,8 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -38,6 +40,12 @@ class BookActivity : AppCompatActivity() {
             R.id.book_tv05, R.id.book_tv06, R.id.book_tv07)
         val values = listOf(bookId) + book + "IT/모바일"
         fields.zip(values).forEach { (id, value) -> findViewById<TextView>(id).text = value }
+        findViewById<Button>(R.id.book_bt01).setOnClickListener {
+            AlertDialog.Builder(this).setTitle("장바구니 담기")
+                .setMessage("도서를 장바구니에 추가하겠습니까?")
+                .setPositiveButton("예") { _, _ -> Cart.add(bookId, book[0], book[1].toInt()) }
+                .setNegativeButton("아니요", null).show()
+        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
@@ -50,6 +58,7 @@ class BookActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home, R.id.menu_list -> finish()
             R.id.menu_home -> startActivity(Intent(this, MainActivity::class.java))
+            R.id.menu_cart -> startActivity(Intent(this, CartActivity::class.java))
             else -> Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
         }
         return true
