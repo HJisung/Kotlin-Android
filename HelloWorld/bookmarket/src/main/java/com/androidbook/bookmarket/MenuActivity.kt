@@ -47,7 +47,9 @@ class MenuActivity : AppCompatActivity() {
 
     fun onEBookClick(view: View) = showMessage("E-Book 버튼을 클릭하였습니다")
     fun onCustomerInquiryClick(view: View) = showMessage("고객문의 버튼을 클릭하였습니다")
-    fun onMyPageClick(view: View) = showMessage("나의페이지 버튼을 클릭하였습니다")
+    fun onMyPageClick(view: View) {
+        startActivity(Intent(this, MyPageActivity::class.java))
+    }
     fun onMarketInfoClick(view: View) = showMessage("마켓정보 버튼을 클릭하였습니다")
     fun onSettingClick(view: View) = showMessage("설정 버튼을 클릭하였습니다")
 

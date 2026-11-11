@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application android:label="BookMarket" android:theme="@style/Theme.BookMarket">
+        <activity android:name=".MemoActivity" android:exported="false" android:label="메모장" android:theme="@style/Theme.BookMarket.ActionBar" />
+        <activity android:name=".MyPageActivity" android:exported="false" android:label="나의 페이지" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".OrderActivity" android:exported="false" android:label="주문서" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".ShippingActivity" android:exported="false" android:label="배송정보" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".CartActivity" android:exported="false" android:label="장바구니" android:theme="@style/Theme.BookMarket.ActionBar" />
