@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "HelloWorld"
 include(":app")
 include(":chapter02")
+include(":bookmarket")
