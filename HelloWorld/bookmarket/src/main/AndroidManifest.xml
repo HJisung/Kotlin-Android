@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application android:label="BookMarket" android:theme="@style/Theme.BookMarket">
-        <activity android:name=".BooksActivity" android:exported="false" />
+        <activity android:name=".BookActivity" android:exported="false" android:label="도서상세정보" android:theme="@style/Theme.BookMarket.ActionBar" />
+        <activity android:name=".BooksActivity" android:exported="false" android:label="도서목록" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".MenuActivity" android:exported="false" />
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>

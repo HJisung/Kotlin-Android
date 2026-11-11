@@ -3,12 +3,18 @@ package com.androidbook.bookmarket
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.MenuItem
+import android.widget.LinearLayout
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
+import androidx.core.view.GravityCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 class MenuActivity : AppCompatActivity() {
     private var index = 0
@@ -17,10 +23,21 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.menu)) { view, insets ->
-            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(bars.left, bars.top, bars.right, bars.bottom)
-            insets
+        val drawer = findViewById<DrawerLayout>(R.id.menu)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener { drawer.openDrawer(GravityCompat.START) }
+        findViewById<NavigationView>(R.id.navigation).setNavigationItemSelectedListener { item: MenuItem ->
+            showMessage(item.title.toString())
+            drawer.closeDrawers()
+            true
+        }
+        toolbar.post {
+            val bars = ViewCompat.getRootWindowInsets(toolbar)
+                ?.getInsets(WindowInsetsCompat.Type.systemBars()) ?: return@post
+            val params = toolbar.layoutParams as LinearLayout.LayoutParams
+            params.topMargin = bars.top
+            toolbar.layoutParams = params
         }
     }
 

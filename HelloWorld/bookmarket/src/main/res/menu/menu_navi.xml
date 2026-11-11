@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu01"
+        android:icon="@drawable/icon_login"
+        android:title="로그인" />
+    <item
+        android:id="@+id/menu02"
+        android:icon="@drawable/icon_setting"
+        android:title="환경설정" />
+    <item
+        android:id="@+id/menu03"
+        android:icon="@drawable/icon_myinfo"
+        android:title="나의정보" />
+</menu>
