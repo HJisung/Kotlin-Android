@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application android:label="BookMarket" android:theme="@style/Theme.BookMarket">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="${MAPS_API_KEY}" />
+        <activity android:name=".MarketInfoActivity" android:exported="false" android:label="마켓정보" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".MemoActivity" android:exported="false" android:label="메모장" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".MyPageActivity" android:exported="false" android:label="나의 페이지" android:theme="@style/Theme.BookMarket.ActionBar" />
         <activity android:name=".OrderActivity" android:exported="false" android:label="주문서" android:theme="@style/Theme.BookMarket.ActionBar" />

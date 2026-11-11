@@ -50,7 +50,9 @@ class MenuActivity : AppCompatActivity() {
     fun onMyPageClick(view: View) {
         startActivity(Intent(this, MyPageActivity::class.java))
     }
-    fun onMarketInfoClick(view: View) = showMessage("마켓정보 버튼을 클릭하였습니다")
+    fun onMarketInfoClick(view: View) {
+        startActivity(Intent(this, MarketInfoActivity::class.java))
+    }
     fun onSettingClick(view: View) = showMessage("설정 버튼을 클릭하였습니다")
 
     fun onBannerClick(view: View) {
